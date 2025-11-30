@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeris Patel | Software Engineer</title>
+    
+    <!-- External Stylesheets -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        },
+                        emerald: {
+                            400: '#34d399',
+                            500: '#10b981',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-300 antialiased selection:bg-emerald-500 selection:text-white bg-grid">
+
+    <!-- Noise Overlay for texture -->
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-card border-b border-slate-800 nav-animate transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 text-xl font-bold text-white tracking-tight group">
+                <img src="aeris.JPG" alt="Aeris Patel" class="w-9 h-9 rounded-full object-cover border-2 border-emerald-500/50 profile-img">
+                <span class="group-hover:text-emerald-400 transition-colors">Aeris Patel</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-emerald-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-emerald-400 after:transition-all hover:after:w-full">About</a>
+                <a href="#experience" class="hover:text-emerald-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-emerald-400 after:transition-all hover:after:w-full">Experience</a>
+                <a href="#projects" class="hover:text-emerald-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-emerald-400 after:transition-all hover:after:w-full">Projects</a>
+                <a href="#skills" class="hover:text-emerald-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-emerald-400 after:transition-all hover:after:w-full">Skills</a>
+                <a href="#contact" class="hover:text-emerald-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-emerald-400 after:transition-all hover:after:w-full">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white mobile-menu-btn">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden px-6 pb-4 space-y-3">
+            <a href="#about" class="block text-slate-300 hover:text-emerald-400 transition">About</a>
+            <a href="#experience" class="block text-slate-300 hover:text-emerald-400 transition">Experience</a>
+            <a href="#projects" class="block text-slate-300 hover:text-emerald-400 transition">Projects</a>
+            <a href="#skills" class="block text-slate-300 hover:text-emerald-400 transition">Skills</a>
+            <a href="#contact" class="block text-slate-300 hover:text-emerald-400 transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+        <!-- Animated Background Orbs -->
+        <div class="absolute top-20 left-10 w-72 h-72 bg-emerald-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-10 floating-orb parallax" data-speed="30"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-10 floating-orb-slow parallax" data-speed="20"></div>
+        <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-5 floating-orb-delayed parallax" data-speed="15"></div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <!-- Badge -->
+            <div class="hero-badge inline-block px-4 py-2 mb-6 text-xs font-mono text-emerald-400 bg-emerald-400/10 rounded-full border border-emerald-400/20 backdrop-blur-sm">
+                <span class="inline-block w-2 h-2 bg-emerald-400 rounded-full mr-2 animate-pulse"></span>
+                Open to Opportunities
+            </div>
+            
+            <!-- Main Title with Typing Effect -->
+            <h1 class="hero-title text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
+                Hi, I'm <span class="gradient-text">Aeris</span>
+            </h1>
+            
+            <!-- Subtitle -->
+            <h2 class="hero-subtitle text-2xl md:text-3xl font-semibold text-slate-400 mb-6">
+                Building <span class="text-white typing-effect" data-text="Scalable Distributed Systems" data-speed="80"></span>
+            </h2>
+            
+            <!-- Description -->
+            <p class="hero-description text-lg md:text-xl text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Software Engineer at <strong class="text-white">Samsung R&D (Bangalore)</strong> powering Gallery Search <strong class="text-white">30M+ Samsung S25 and S26 series</strong> users. CSE Graduate from <strong class="text-white">NITK Surathkal</strong>. Expert in Kotlin, Java, Spring Boot, and Event-Driven Architecture.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="hero-buttons flex flex-col md:flex-row justify-center gap-4">
+                <a href="#contact" class="magnetic-btn btn-glow px-8 py-3 bg-emerald-500 text-slate-950 font-bold rounded-lg transition-all duration-300">
+                    <i class="fas fa-paper-plane mr-2"></i>Get in Touch
+                </a>
+                <a href="#experience" class="magnetic-btn px-8 py-3 bg-slate-800 text-white font-semibold rounded-lg hover:bg-slate-700 transition-all duration-300 border border-slate-700 hover:border-emerald-500/50">
+                    <i class="fas fa-briefcase mr-2"></i>View Experience
+                </a>
+            </div>
+            
+            <!-- Stats -->
+            <div class="hero-stats grid grid-cols-2 md:grid-cols-3 gap-6 mt-16 border-t border-slate-800 pt-8">
+                <div class="group cursor-pointer">
+                    <div class="stat-counter text-2xl font-bold text-white font-mono counter-number" data-target="1681">0</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-wider group-hover:text-emerald-400 transition">Codeforces Max</div>
+                </div>
+                <div class="group cursor-pointer">
+                    <div class="stat-counter text-2xl font-bold text-white font-mono counter-number" data-target="696" data-prefix="AIR ">0</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-wider group-hover:text-emerald-400 transition">JEE Main Rank</div>
+                </div>
+                <div class="group cursor-pointer">
+                    <div class="stat-counter text-2xl font-bold text-white font-mono counter-number" data-target="1542">0</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-wider group-hover:text-emerald-400 transition">LeetCode Rating</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <a href="#experience" class="text-slate-500 hover:text-emerald-400 transition">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 bg-slate-900/50 relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="section-title animate-slide-left text-3xl font-bold text-white mb-12">
+                Experience
+            </h2>
+
+            <div class="space-y-8">
+                
+                <!-- Current Role -->
+                <div class="animate-slide-right glass-card card-hover rounded-xl p-6 group">
+                    <div class="flex flex-wrap items-center gap-3 mb-3">
+                        <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-mono rounded-full border border-emerald-500/30 whitespace-nowrap">
+                            <i class="fas fa-circle text-[6px] mr-2 animate-pulse"></i>July 2024 → Present
+                        </span>
+                        <span class="h-1 w-1 bg-slate-600 rounded-full hidden sm:block"></span>
+                        <span class="text-slate-500 text-xs">Full-time</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition mb-1">
+                        Software Engineer — Gallery Search
+                    </h3>
+                    <div class="text-emerald-500 font-medium mb-2 flex items-center gap-2">
+                        <i class="fas fa-building"></i>SAMSUNG R&D • Bengaluru, India
+                    </div>
+                    <p class="text-slate-500 text-xs mb-4 italic"></p>
+                    <ul class="list-disc ml-5 space-y-3 text-slate-400 text-base leading-relaxed marker:text-emerald-500">
+                        <li> a key role in commercializing an AI-powered Gallery Search android application for <strong class="text-white"> 30 million users on Samsung S25 & S26</strong> devices, boosting search accuracy by <strong class="text-white">70% with a fully on-device solution.</strong></li>
+                        <li><strong class="text-white">Led the end-to-end development</strong> of a full-stack user behavior analysis module for the Galaxy S25, utilizing Kotlin, Java and optimized SQL queries to reduce processing <strong class="text-white"> by 15% and improve backend performance by 25%</strong></li>
+                        <li><strong class="text-white">Led the development of 3 out of 6 Gallery Collection services</strong> and contributed to key UI enhancements, achieving over 95% per-user collection accuracy by refining service logic and optimizing metadata processing flows.</li>
+                        <li><strong class="text-white">Independently engineered and integrated a critical data logging mechanism</strong> to capture key user interactions, enabling rapid root cause analysis and resolution of system faults.</li>
+                        <li>Designed a secure, privacy-centric solution using an on-device <strong class="text-white"> Data Engine and Knowledge Graph</strong> to process user data, enabling innovative AI features and personalized relationship analysis.</li>
+                    </ul>
+                    <div class="mt-4 pt-4 border-t border-slate-700/50">
+                        <span class="text-emerald-400 text-sm"><i class="fas fa-trophy mr-2"></i>Team Awesome award & Managing Director Special Recognition award for Exceptional Delivery</span>
+                    </div>
+                </div>
+
+                <!-- Intuit Intern -->
+                <div class="animate-slide-left glass-card card-hover rounded-xl p-6 group">
+                    <div class="flex flex-wrap items-center gap-3 mb-3">
+                        <span class="px-3 py-1 bg-slate-700/50 text-slate-400 text-xs font-mono rounded-full border border-slate-600 whitespace-nowrap">
+                            May 2023 → Jul 2023
+                        </span>
+                        <span class="h-1 w-1 bg-slate-600 rounded-full hidden sm:block"></span>
+                        <span class="text-slate-500 text-xs">Internship</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition mb-1">Software Engineer Intern</h3>
+                    <div class="text-emerald-500 font-medium mb-4 flex items-center gap-2">
+                        <i class="fas fa-building"></i>SAMSUNG R&D • Bengaluru
+                    </div>
+                    <ul class="list-disc ml-5 space-y-3 text-slate-400 text-base leading-relaxed marker:text-emerald-500">
+                        <li>Developed an innovative bandwidth allocation algorithm during an internship, optimizing video streaming by <strong class="text-white"> predicting and assigning required bandwidth to video chunks</strong>.</li>
+                        <li>Deployed a data-driven approach, analyzing video content to proactively allocate precise bandwidth.</li>
+                        <li>Researched the protocol used by this streaming website to transmit videos from the server to the client</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 relative overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute top-1/2 right-0 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-[150px] opacity-10"></div>
+        <div class="absolute bottom-0 left-1/4 w-72 h-72 bg-emerald-500 rounded-full mix-blend-multiply filter blur-[120px] opacity-10"></div>
+        
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="section-title animate-slide-left text-3xl font-bold text-white mb-4">
+                Featured Projects
+            </h2>
+            <p class="text-slate-400 mb-12 max-w-2xl">Building full-stack applications that solve real problems with modern technologies.</p>
+
+            <!-- LogAI Project Card -->
+            <div class="animate-scale project-card glass-card rounded-2xl overflow-hidden border border-slate-700/50 hover:border-emerald-500/50 transition-all duration-500">
+                <!-- Project Header -->
+                <div class="bg-gradient-to-r from-purple-900/50 via-slate-900/50 to-emerald-900/50 p-8 border-b border-slate-700/50">
+                    <div class="flex flex-wrap items-center gap-4 mb-4">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-emerald-500 flex items-center justify-center">
+                            <i class="fas fa-brain text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">LogAI</h3>
+                            <p class="text-slate-400 text-sm">LLM-Powered Java Log Analyzer & Auto-Fix Engine</p>
+                        </div>
+                        <div class="ml-auto flex gap-2">
+                            <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-mono rounded-full border border-emerald-500/30">
+                                <i class="fas fa-circle text-[6px] mr-1 animate-pulse"></i>Live
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Tech Badges -->
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 bg-orange-500/20 text-orange-400 text-xs font-medium rounded-md">Java 17+</span>
+                        <span class="px-2.5 py-1 bg-blue-500/20 text-blue-400 text-xs font-medium rounded-md">React 18</span>
+                        <span class="px-2.5 py-1 bg-green-500/20 text-green-400 text-xs font-medium rounded-md">Python</span>
+                        <span class="px-2.5 py-1 bg-purple-500/20 text-purple-400 text-xs font-medium rounded-md">Gemini AI</span>
+                        <span class="px-2.5 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-medium rounded-md">Supabase</span>
+                        <span class="px-2.5 py-1 bg-slate-500/20 text-slate-300 text-xs font-medium rounded-md">TypeScript</span>
+                    </div>
+                </div>
+                
+                <!-- Project Content -->
+                <div class="p-8">
+                    <p class="text-slate-300 mb-6 leading-relaxed">
+                        An intelligent log analysis platform that automatically captures Java application errors, clusters similar issues, 
+                        explains root causes in plain English, and generates code fixes using AI. Features multi-tenant authentication, 
+                        GitHub integration for source context, and fully deployed infrastructure.
+                    </p>
+                    
+                    <!-- Key Features -->
+                    <div class="grid md:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-start gap-3 p-4 bg-slate-800/50 rounded-lg">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-search text-emerald-400 text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm mb-1">Automatic Error Capture</h4>
+                                <p class="text-slate-400 text-xs">SDK intercepts logs via custom Logback appender</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 bg-slate-800/50 rounded-lg">
+                            <div class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-robot text-purple-400 text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm mb-1">AI-Powered Analysis</h4>
+                                <p class="text-slate-400 text-xs">Gemini LLM explains root causes in plain English</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 bg-slate-800/50 rounded-lg">
+                            <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-code text-blue-400 text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm mb-1">Auto-Generated Fixes</h4>
+                                <p class="text-slate-400 text-xs">Multi-file unified diff patches ready to apply</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 bg-slate-800/50 rounded-lg">
+                            <div class="w-8 h-8 rounded-lg bg-orange-500/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fab fa-github text-orange-400 text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm mb-1">GitHub Integration</h4>
+                                <p class="text-slate-400 text-xs">Fetches real source code for accurate fixes</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Architecture Preview -->
+                    <div class="mb-8 p-4 bg-slate-900/80 rounded-xl border border-slate-700/50 font-mono text-xs overflow-x-auto">
+                        <div class="text-slate-500 mb-2">// System Architecture</div>
+                        <div class="text-slate-300 whitespace-pre">
+<span class="text-emerald-400">Java App</span> → <span class="text-orange-400">LogAI SDK</span> → <span class="text-cyan-400">Supabase</span> → <span class="text-purple-400">Python Backend</span> → <span class="text-pink-400">Gemini AI</span>
+    │                                    │
+    └──────────────────────────────────────┴──→ <span class="text-blue-400">React Dashboard</span></div>
+                    </div>
+                    
+                    <!-- Component Links -->
+                    <div class="grid md:grid-cols-4 gap-3 mb-6">
+                        <a href="https://github.com/Arun-Labana/logai-sdk" target="_blank" rel="noopener noreferrer" 
+                           class="flex items-center gap-2 p-3 bg-slate-800/50 hover:bg-slate-700/50 rounded-lg border border-slate-700/50 hover:border-orange-500/50 transition group">
+                            <i class="fab fa-java text-orange-400 text-lg"></i>
+                            <div>
+                                <div class="text-white text-sm font-medium group-hover:text-orange-400 transition">SDK</div>
+                                <div class="text-slate-500 text-xs">Java • Maven</div>
+                            </div>
+                        </a>
+                        <a href="https://github.com/Arun-Labana/logai-backend" target="_blank" rel="noopener noreferrer"
+                           class="flex items-center gap-2 p-3 bg-slate-800/50 hover:bg-slate-700/50 rounded-lg border border-slate-700/50 hover:border-green-500/50 transition group">
+                            <i class="fab fa-python text-green-400 text-lg"></i>
+                            <div>
+                                <div class="text-white text-sm font-medium group-hover:text-green-400 transition">Backend</div>
+                                <div class="text-slate-500 text-xs">Python • AI</div>
+                            </div>
+                        </a>
+                        <a href="https://github.com/Arun-Labana/logai-frontend-app" target="_blank" rel="noopener noreferrer"
+                           class="flex items-center gap-2 p-3 bg-slate-800/50 hover:bg-slate-700/50 rounded-lg border border-slate-700/50 hover:border-blue-500/50 transition group">
+                            <i class="fab fa-react text-blue-400 text-lg"></i>
+                            <div>
+                                <div class="text-white text-sm font-medium group-hover:text-blue-400 transition">Frontend</div>
+                                <div class="text-slate-500 text-xs">React • TS</div>
+                            </div>
+                        </a>
+                        <a href="https://github.com/Arun-Labana/sample-logai-app" target="_blank" rel="noopener noreferrer"
+                           class="flex items-center gap-2 p-3 bg-slate-800/50 hover:bg-slate-700/50 rounded-lg border border-slate-700/50 hover:border-purple-500/50 transition group">
+                            <i class="fas fa-flask text-purple-400 text-lg"></i>
+                            <div>
+                                <div class="text-white text-sm font-medium group-hover:text-purple-400 transition">Sample</div>
+                                <div class="text-slate-500 text-xs">Demo App</div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://logai-frontend-app.vercel.app" target="_blank" rel="noopener noreferrer"
+                           class="magnetic-btn inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 text-slate-950 font-bold rounded-lg btn-glow transition-all duration-300">
+                            <i class="fas fa-external-link-alt"></i>
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/Arun-Labana/logai-sdk" target="_blank" rel="noopener noreferrer"
+                           class="magnetic-btn inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-white font-semibold rounded-lg hover:bg-slate-700 transition-all duration-300 border border-slate-700 hover:border-emerald-500/50">
+                            <i class="fab fa-github"></i>
+                            View Source
+                        </a>
+                        <a href="https://jitpack.io/#Arun-Labana/logai-sdk" target="_blank" rel="noopener noreferrer"
+                           class="magnetic-btn inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-white font-semibold rounded-lg hover:bg-slate-700 transition-all duration-300 border border-slate-700 hover:border-orange-500/50">
+                            <i class="fas fa-cube"></i>
+                            JitPack
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+            
+            <div>
+                <h2 class="section-title animate-blur text-3xl font-bold text-white mb-8">
+                    Technical Arsenal
+                </h2>
+                
+                <div class="space-y-6">
+                    <div class="animate-on-scroll" style="transition-delay: 0.1s;">
+                        <h4 class="text-white font-bold mb-3 flex items-center"><i class="fas fa-code mr-2 text-emerald-500"></i> Languages</h4>
+                        <div class="stagger-children flex flex-wrap gap-2">
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">Kotlin</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">Java</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">C++</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">C</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">Python</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">SQL</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div class="animate-on-scroll" style="transition-delay: 0.15s;">
+                        <h4 class="text-white font-bold mb-3 flex items-center"><i class="fas fa-server mr-2 text-emerald-500"></i> Backend & Frameworks</h4>
+                        <div class="stagger-children flex flex-wrap gap-2">
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">Spring Boot</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">Microservices</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">REST APIs</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">GraphQL</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">Maven</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">Gradle</span>
+                        </div>
+                    </div>
+
+                    <div class="animate-on-scroll" style="transition-delay: 0.2s;">
+                        <h4 class="text-white font-bold mb-3 flex items-center"><i class="fas fa-database mr-2 text-emerald-500"></i> Databases & Messaging</h4>
+                        <div class="stagger-children flex flex-wrap gap-2">
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">MySQL</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">MongoDB</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">SQLite</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">Kafka</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">ActiveMQ</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">RabbitMQ</span>
+                        </div>
+                    </div>
+
+                    <div class="animate-on-scroll" style="transition-delay: 0.25s;">
+                        <h4 class="text-white font-bold mb-3 flex items-center"><i class="fas fa-cloud mr-2 text-emerald-500"></i> Cloud & DevOps</h4>
+                        <div class="stagger-children flex flex-wrap gap-2">
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">AWS</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">Kubernetes</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">Docker</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">Jenkins</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">CI/CD</span>
+                        </div>
+                    </div>
+
+                    <div class="animate-on-scroll" style="transition-delay: 0.3s;">
+                        <h4 class="text-white font-bold mb-3 flex items-center"><i class="fas fa-chart-line mr-2 text-emerald-500"></i> Observability & Testing</h4>
+                        <div class="stagger-children flex flex-wrap gap-2">
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">JUnit</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">Mockito</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">SonarQube</span>
+                        </div>
+                    </div>
+
+                    <div class="animate-on-scroll" style="transition-delay: 0.35s;">
+                        <h4 class="text-white font-bold mb-3 flex items-center"><i class="fas fa-sitemap mr-2 text-emerald-500"></i> Architecture & Patterns</h4>
+                        <div class="stagger-children flex flex-wrap gap-2">
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">Event-Driven</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">Design Patterns</span>
+                            <span class="skill-badge px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded border border-slate-700 cursor-pointer">System Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="section-title animate-blur text-3xl font-bold text-white mb-8">
+                    Distinctions
+                </h2>
+                
+                <div class="grid gap-4">
+                    <!-- <div class="animate-scale p-6 glass-card card-hover rounded-xl">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold text-white">5-Star Coder @ CodeChef</h3>
+                            <i class="fas fa-star text-yellow-400 text-xl"></i>
+                        </div>
+                        <p class="text-slate-400 text-sm">Achieved a highest rating of <strong class="text-white">2063</strong>. Demonstrated elite problem-solving skills under time pressure.</p>
+                    </div> -->
+
+                    <div class="animate-scale p-6 glass-card card-hover rounded-xl">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold text-white">Expert @ Codeforces</h3>
+                            <i class="fas fa-code text-blue-400 text-xl"></i>
+                        </div>
+                        <p class="text-slate-400 text-sm">Highest rating of <strong class="text-white">1681</strong>.</p>
+                    </div>
+
+                    <div class="animate-scale p-6 glass-card card-hover rounded-xl">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold text-white">JEE Main 2020</h3>
+                            <i class="fas fa-award text-emerald-400 text-xl"></i>
+                        </div>
+                        <p class="text-slate-400 text-sm">Secured <strong class="text-white">AIR 696</strong> among 1 million+ candidates, showcasing strong analytical foundations.</p>
+                    </div>
+
+                    <div class="animate-scale p-6 glass-card card-hover rounded-xl">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold text-white">NITK Surathkal</h3>
+                            <i class="fas fa-graduation-cap text-purple-400 text-xl"></i>
+                        </div>
+                        <p class="text-slate-400 text-sm">B.Tech in Computer Science & Engineering. Batch of 2024.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Footer -->
+    <footer id="contact" class="bg-slate-900 border-t border-slate-800 py-20 relative overflow-hidden">
+        <!-- Background Effect -->
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500 rounded-full filter blur-[200px] opacity-5"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="animate-zoom-bounce text-4xl md:text-5xl font-bold text-white mb-10">Let's Connect</h2>
+            
+            <!-- Email Button -->
+            <div class="animate-scale mb-12">
+                <a href="mailto:patelaeris@gmail.com" class="magnetic-btn inline-flex items-center gap-3 px-8 py-4 bg-emerald-500 text-slate-950 font-bold rounded-lg btn-glow text-lg">
+                    <i class="fas fa-envelope"></i>
+                    patelaeris@gmail.com
+                </a>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="animate-flip flex justify-center gap-8 mb-12">
+                <a href="mailto:patelaeris@gmail.com" class="social-icon text-4xl text-slate-400 hover:text-emerald-400 transition" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/aeris-patel/" target="_blank" rel="noopener noreferrer" class="social-icon text-4xl text-slate-400 hover:text-blue-500 transition" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/PatelAerisM" target="_blank" rel="noopener noreferrer" class="social-icon text-4xl text-slate-400 hover:text-white transition" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            
+            <div class="animate-blur text-slate-600 text-sm">
+                <p>&copy; 2025 Aeris Patel</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
+
